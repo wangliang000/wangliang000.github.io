@@ -2,8 +2,8 @@ import { defineConfig } from "umi";
 
 export default defineConfig({
   routes: [
-    { path: "/", component: "index" },
-    { path: "/docs", component: "docs" },
+    { path: "/", component: "Home" },
+    { path: "/article", component: "Article" },
   ],
   npmClient: 'yarn',
 });
