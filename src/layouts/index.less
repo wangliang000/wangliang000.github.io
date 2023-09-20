@@ -1,3 +1,4 @@
+@color: #242424;
 * {
   margin: 0;
   padding: 0;
@@ -13,24 +14,47 @@ body {
   background-image: url('../assets/bg.jpg');
   background-size: cover;
 }
+::selection {
+  background: skyblue;
+  color: rgba(240, 240, 185, 0.7);
+}
 .layout {
   display: flex;
   overflow: hidden;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: @color;
   .main {
     display: flex;
     overflow: hidden;
     width: 80vw;
-    height: 800px;
+    height: 80vh;
     border-radius: 2%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
+
     & nav {
       width: 200px;
       border-right: 3px solid rgba(191, 191, 189, 0.525);
+      .intro {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid rgba(191, 191, 189, 0.525);
+        .nickName {
+          margin-left: 8px;
+          font-size: 18px;
+          font-weight: 500;
+          color: rgba(240, 240, 185, 0.7);
+          text-decoration: dotted;
+        }
+        & > svg {
+          vertical-align: middle;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+        }
+      }
+
       li {
         width: 100%;
         font-size: 20px;
@@ -52,6 +76,7 @@ body {
       }
     }
     & .content {
+      overflow: hidden;
       padding: 20px;
       flex: 1 0 auto;
     }

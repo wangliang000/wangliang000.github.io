@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'umi';
 import { navList } from './constants';
-import { useState, useEffect } from 'react';
 import styles from './index.less';
+import AvatarImg from './avatar';
 export default function Layout() {
   const location = useLocation();
   const [activeItem, setActiveItem] = useState('');
@@ -12,6 +13,10 @@ export default function Layout() {
     <div className={styles.layout}>
       <div className={styles.main}>
         <nav>
+          <div className={styles.intro}>
+            <AvatarImg />
+            <span className={styles.nickName}>昱旸</span>
+          </div>
           <ul>
             {navList.map((item) => (
               <li
