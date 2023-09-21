@@ -1,53 +1,63 @@
-.item {
-  padding: 4px;
-  overflow: hidden;
-  border-radius: 6px;
-  box-shadow:
-    2px 2px 3px #dd5a02,
-    -2px -2px 3px #dd5a02;
-  & + & {
-    margin-top: 10px;
-  }
-  &:hover {
-    border: unset;
-    box-shadow:
-      2px 2px 3px rgb(105, 39, 3),
-      -2px -2px 3px rgb(105, 39, 3);
-  }
-  .header {
+.listWrap {
+  height: calc(100% - 64px);
+  overflow-y: scroll;
+  .wrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 4px;
-    .title {
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .item {
+      width: 90%;
       padding: 4px;
-      .plus {
-        margin-left: 8px;
-        padding: 0 2px;
-        border-radius: 10% 30%;
-        background: skyblue;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow:
+        2px 2px 3px #dd5a02,
+        -2px -2px 3px #dd5a02;
+      &:hover {
+        border: unset;
+        box-shadow:
+          2px 2px 3px rgb(105, 39, 3),
+          -2px -2px 3px rgb(105, 39, 3);
       }
-    }
-    .close {
-      font-weight: 500;
-      cursor: pointer;
-    }
-    .close:hover {
-      color: #dd5a02;
-      text-shadow: 1px 1px 3px #686666;
-    }
-  }
-  .process {
-    width: 100px;
-    height: 8px;
-  }
-  .status {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: #686666;
-    & > * + * {
-      margin-left: 6px;
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4px;
+        .title {
+          padding: 4px;
+          .plus {
+            margin-left: 8px;
+            padding: 0 2px;
+            border-radius: 10% 30%;
+            background: skyblue;
+          }
+        }
+        .close {
+          font-weight: 500;
+          cursor: pointer;
+        }
+        .close:hover {
+          color: #dd5a02;
+          text-shadow: 1px 1px 3px #686666;
+        }
+      }
+      .process {
+        width: 100px;
+        height: 8px;
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #686666;
+        & > * + * {
+          margin-left: 6px;
+        }
+      }
     }
   }
 }

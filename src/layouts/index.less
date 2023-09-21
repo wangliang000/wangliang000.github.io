@@ -10,6 +10,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-image: url('../assets/bg.jpg');
   background-size: cover;
@@ -35,7 +38,7 @@ body {
     backdrop-filter: blur(14px);
 
     & nav {
-      width: 200px;
+      flex: 0 0 200px;
       border-right: 3px solid rgba(191, 191, 189, 0.525);
       .intro {
         padding: 10px;
@@ -81,4 +84,21 @@ body {
       flex: 1 0 auto;
     }
   }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset006px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(228, 103, 19, 0.4);
 }

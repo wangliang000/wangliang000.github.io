@@ -21,8 +21,8 @@ function List() {
     TodoDb.deleteItem(id);
   };
   return (
-    <div>
-      <ul>
+    <div className={styles.listWrap}>
+      <ul className={styles.wrap}>
         {list.length
           ? list.map((item) => {
               return (

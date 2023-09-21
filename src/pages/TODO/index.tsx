@@ -22,19 +22,17 @@ export default function TODOList() {
     }
   };
   return (
-    <section>
-      <>
+    <section className={styles.todo}>
+      <div>
         <Input value={todo} onChange={handleSetTodo} />
         <Button onClick={handleSubmit} text="提交" />
-        <div className={styles.filterBar}>
-          <Button type="text">时间</Button>
-          <Button type="text">分类</Button>
-          <Button type="text">完成</Button>
-        </div>
-        <div className={styles.listWrap}>
-          <List />
-        </div>
-      </>
+      </div>
+      <div className={styles.filterBar}>
+        <Button type="text">时间</Button>
+        <Button type="text">分类</Button>
+        <Button type="text">完成</Button>
+      </div>
+      <List />
     </section>
   );
 }
