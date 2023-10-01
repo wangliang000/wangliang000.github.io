@@ -12,7 +12,9 @@
     "dayjs": "^1.11.9",
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.6",
-    "umi": "^4.0.80"
+    "three": "^0.156.1",
+    "umi": "^4.0.80",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",

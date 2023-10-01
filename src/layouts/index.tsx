@@ -1,14 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { Link, Outlet, useLocation } from 'umi';
 import { navList } from './constants';
+import * as Three from 'three';
+import rings from 'vanta/dist/vanta.rings.min.js';
 import styles from './index.less';
 import AvatarImg from './avatar';
 import Loading from '@/components/Loading';
 
 export default function Layout() {
   const location = useLocation();
+  const bgAnimationRef = useRef<HTMLDivElement|null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [activeItem, setActiveItem] = useState('');
+  useLayoutEffect(() => {
+    if(bgAnimationRef.current) {
+       rings({
+      el: bgAnimationRef.current,
+      THREE:Three,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 0.8,
+      scaleMobile: 1.0,
+    });
+  }
+  }, [bgAnimationRef,loading]);
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -19,7 +37,7 @@ export default function Layout() {
     return <Loading />;
   }
   return (
-    <div className={styles.layout}>
+    <div className={styles.layout} ref={bgAnimationRef}>
       <div className={styles.main}>
         <nav>
           <div className={styles.intro}>
